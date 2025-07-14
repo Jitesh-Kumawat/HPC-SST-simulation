@@ -51,8 +51,8 @@ Each job includes:
 
 - `polarfly_stats.csv` – SST-generated CSV with all enabled statistics.
 - Plots:
-  - `TotalPackets_HopsPerJob.png`
-  - `Latency_vs_Ranks.png`
+  - `HopsPerJob.png`
+  - `simulation_result.png`
   - `GlobalHopCountSummary.png`
 
 ---
@@ -71,4 +71,4 @@ Each job includes:
 Ensure SST is installed and Python simulation mode is enabled:
 
 ```bash
-sst 9d1d0783-e99a-4ccd-8e15-354522f470d2.py
+sst polarfly.py
