@@ -1,0 +1,5 @@
+Job ID,Pattern,Size,Avg Hop Count,Hoptype2,Hoptype3,Hoptype4,Hoptype5,Hoptype6,Hoptype7,Hoptype8,Hoptype9
+Job 1,Allreduce,size=32,3.05,272,440,240,40,0,0,0,0
+Job 2,Alltoall,size=64,4.32,536,880,760,776,760,320,0,0
+Job 3,Scatter,size=128,4.65,3,20,40,30,24,10,0,0
+Job 4,Bcast,size=256,5.8,5,20,30,50,60,50,30,10
