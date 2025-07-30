@@ -140,30 +140,6 @@ python miniMD/mesh3D/hopcount.py
 
 ---
 
-## 📂 Project Directory Structure
-
-```
-sst-miniapps-simulation/
-├── application_simulation/
-│   ├── miniFE/
-│   │   └── mesh_topology/
-│   │       ├── hopcount.py
-│   │       ├── minife_communication_stats.csv
-│   │       ├── minife_hopcount_mesh.xlsx
-│   │       └── simulation_output.pdf
-│   ├── miniMD/
-│   │   └── mesh3D/
-│   │       ├── hopcount.py
-│   │       ├── minimd_mesh_stats.csv
-│   │       ├── minimd_avg_hopcount.png
-│   │       └── simulation_output.pdf
-├── tau_profile_output/
-│   ├── summary.txt
-│   └── tau_summary.pdf
-```
-
----
-
 ## 🔗 Useful Links
 
 - [TAU Profiler](https://tau.uoregon.edu/)
