@@ -1,0 +1,125 @@
+124 dynamic_trace_events
+# FunctionId Group Tag "Name Type" Parameters
+0 TAUEVENT 0 ".TAU <unknown event>" TriggerValue
+1 TAU_DEFAULT 0 ".TAU application " EntryExit
+2 TAU_DEFAULT 0 "_GLOBAL__sub_I__ZN6miniFE11is_neighborERK3BoxS2_ [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/main.cpp} {247,0}] " EntryExit
+3 TAU_DEFAULT 0 "__static_initialization_and_destruction_0() [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/main.cpp} {247,0}] " EntryExit
+4 TAU_DEFAULT 0 "taupreload_main " EntryExit
+5 TAU_DEFAULT 0 "main [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/main.cpp} {86,0}] " EntryExit
+6 TAU_DEFAULT 0 "miniFE::get_parameters(int, char**, miniFE::Parameters&) [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/../utils/utils.cpp} {54,0}] " EntryExit
+7 TAU_DEFAULT 0 "Mantevo::read_args_into_string(int, char**, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/../utils/param_utils.cpp} {37,0}] " EntryExit
+8 TAU_DEFAULT 0 "miniFE::initialize_mpi(int, char**, int&, int&) [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/../utils/utils.cpp} {116,0}] " EntryExit
+9 MPI 0 "MPI_Init()  " EntryExit
+11 MPI 0 "MPI_Comm_size()  " EntryExit
+12 MPI 0 "MPI_Comm_rank()  " EntryExit
+13 TAU_DEFAULT 0 "miniFE::mytimer() [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/../utils/mytimer.cpp} {112,0}] " EntryExit
+14 TAU_DEFAULT 0 "miniFE::broadcast_parameters(miniFE::Parameters&) [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/../utils/utils.cpp} {86,0}] " EntryExit
+15 MPI 0 "MPI_Bcast()  " EntryExit
+16 MPI 0 "MPI Collective Sync  " EntryExit
+18 TAU_DEFAULT 0 "box_partition(int, int, int, Box const&, Box*) [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/../utils/BoxPartition.cpp} {82,0}] " EntryExit
+19 MPI 0 "MPI_Allreduce()  " EntryExit
+21 TAU_DEFAULT 0 "YAML_Doc::YAML_Doc(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/YAML_Doc.cpp} {17,0}] " EntryExit
+22 MPI 0 "MPI_Allgather()  " EntryExit
+24 MPI 0 "MPI_Irecv()  " EntryExit
+25 MPI 0 "MPI_Send()  " EntryExit
+27 MPI 0 "MPI_Wait()  " EntryExit
+31 MPI 0 "MPI_Reduce()  " EntryExit
+33 TAU_DEFAULT 0 "miniFE::finalize_mpi() [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/../utils/utils.cpp} {129,0}] " EntryExit
+34 MPI 0 "MPI_Finalize()  " EntryExit
+36 TAU_DEFAULT 0 "YAML_Doc::~YAML_Doc() [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/YAML_Doc.cpp} {25,0}] " EntryExit
+37 TAU_DEFAULT 0 "YAML_Element::~YAML_Element() [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/YAML_Element.cpp} {12,0}] " EntryExit
+10 TAUEVENT 0 "TauTraceClockOffsetStart" TriggerValue
+17 TAUEVENT 0 "Message size for broadcast" TriggerValue
+20 TAUEVENT 0 "Message size for all-reduce" TriggerValue
+23 TAUEVENT 0 "Message size for all-gather" TriggerValue
+26 TAUEVENT 0 "Message size sent to all nodes" TriggerValue
+28 TAUEVENT 0 "Message size received from all nodes" TriggerValue
+29 TAUEVENT 0 "Message size received in wait" TriggerValue
+30 TAUEVENT 0 "Message size received in wait : taupreload_main => main [{/mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/main.cpp} {86,0}] => MPI_Wait()  " TriggerValue
+32 TAUEVENT 0 "Message size for reduce" TriggerValue
+35 TAUEVENT 0 "TauTraceClockOffsetEnd" TriggerValue
+38 TAUEVENT 0 "CPU Cores | 6" TriggerValue
+39 TAUEVENT 0 "CPU MHz | 2495.998" TriggerValue
+40 TAUEVENT 0 "CPU Type | 12th Gen Intel(R) Core(TM) i5-1235U" TriggerValue
+41 TAUEVENT 0 "CPU Vendor | GenuineIntel" TriggerValue
+42 TAUEVENT 0 "CPUs Allowed | fff" TriggerValue
+43 TAUEVENT 0 "CPUs Allowed List | 0-11" TriggerValue
+44 TAUEVENT 0 "CWD | /mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src" TriggerValue
+45 TAUEVENT 0 "Cache Size | 12288 KB" TriggerValue
+46 TAUEVENT 0 "Command Line | ./miniFE.x" TriggerValue
+47 TAUEVENT 0 "Executable | /mnt/d/SST_Install/task1/sst-miniapps-simulation/miniFE/ref/src/miniFE.x" TriggerValue
+48 TAUEVENT 0 "Hostname | LAPTOP-6JC29KGV" TriggerValue
+49 TAUEVENT 0 "Local Time | 2025-07-26T10:11:35+00:00" TriggerValue
+50 TAUEVENT 0 "MPI Processor Name | LAPTOP-6JC29KGV" TriggerValue
+51 TAUEVENT 0 "Memories Allowed | 00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001" TriggerValue
+52 TAUEVENT 0 "Memories Allowed List | 0" TriggerValue
+53 TAUEVENT 0 "Memory Size | 3841216 kB" TriggerValue
+54 TAUEVENT 0 "Node Name | LAPTOP-6JC29KGV" TriggerValue
+55 TAUEVENT 0 "OS Machine | x86_64" TriggerValue
+56 TAUEVENT 0 "OS Name | Linux" TriggerValue
+57 TAUEVENT 0 "OS Release | 6.6.87.2-microsoft-standard-WSL2" TriggerValue
+58 TAUEVENT 0 "OS Version | #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025" TriggerValue
+59 TAUEVENT 0 "Starting Timestamp | 1753524695873236" TriggerValue
+60 TAUEVENT 0 "TAU Architecture | default" TriggerValue
+61 TAUEVENT 0 "TAU Config |  -c++=mpicxx -cc=mpicc -mpiinc=/mnt/d/SST_Install/local/packages/openmpi-4.1.6_install/include -mpilib=/mnt/d/SST_Install/local/packages/openmpi-4.1.6_install/lib -pdt=/mnt/d/WSL_TAU_Install/tau-2.34.1/pdtoolkit-3.25.2 -bfd=download -unwind=/usr" TriggerValue
+62 TAUEVENT 0 "TAU Makefile | /mnt/d/WSL_TAU_Install/tau-2.34.1/x86_64/lib/Makefile.tau-mpi-pdt" TriggerValue
+63 TAUEVENT 0 "TAU Version | 2.34-git" TriggerValue
+64 TAUEVENT 0 "TAU_BFD_LOOKUP | on" TriggerValue
+65 TAUEVENT 0 "TAU_CALLPATH_DEPTH | 2" TriggerValue
+66 TAUEVENT 0 "TAU_CALLSITE_DEPTH | 1" TriggerValue
+67 TAUEVENT 0 "TAU_COMM_MATRIX | off" TriggerValue
+68 TAUEVENT 0 "TAU_CUDA_BINARY_EXE | " TriggerValue
+69 TAUEVENT 0 "TAU_CUPTI_API | runtime" TriggerValue
+70 TAUEVENT 0 "TAU_CUPTI_PC | off" TriggerValue
+71 TAUEVENT 0 "TAU_CURRENT_TIMER_EXIT_PARAMS | off" TriggerValue
+72 TAUEVENT 0 "TAU_EBS_KEEP_UNRESOLVED_ADDR | off" TriggerValue
+73 TAUEVENT 0 "TAU_IBM_BG_HWP_COUNTERS | off" TriggerValue
+74 TAUEVENT 0 "TAU_MEASURE_TAU | off" TriggerValue
+75 TAUEVENT 0 "TAU_MEMDBG_PROTECT_ABOVE | off" TriggerValue
+76 TAUEVENT 0 "TAU_MEMDBG_PROTECT_BELOW | off" TriggerValue
+77 TAUEVENT 0 "TAU_MEMDBG_PROTECT_FREE | off" TriggerValue
+78 TAUEVENT 0 "TAU_MEMMGR_MAX_BLOCKS | 64" TriggerValue
+79 TAUEVENT 0 "TAU_OPENMP_RUNTIME | on" TriggerValue
+80 TAUEVENT 0 "TAU_OPENMP_RUNTIME_EVENTS | on" TriggerValue
+81 TAUEVENT 0 "TAU_OPENMP_RUNTIME_STATES | off" TriggerValue
+82 TAUEVENT 0 "TAU_OUTPUT_CUDA_CSV | off" TriggerValue
+83 TAUEVENT 0 "TAU_PAPI_MULTIPLEXING | off" TriggerValue
+84 TAUEVENT 0 "TAU_PROFILE | off" TriggerValue
+85 TAUEVENT 0 "TAU_PROFILE_FORMAT | profile" TriggerValue
+86 TAUEVENT 0 "TAU_RECYCLE_THREADS | off" TriggerValue
+87 TAUEVENT 0 "TAU_REGION_ADDRESSES | off" TriggerValue
+88 TAUEVENT 0 "TAU_SAMPLING | off" TriggerValue
+89 TAUEVENT 0 "TAU_SHOW_MEMORY_FUNCTIONS | off" TriggerValue
+90 TAUEVENT 0 "TAU_SIGNALS_GDB | off" TriggerValue
+91 TAUEVENT 0 "TAU_SYNCHRONIZE_CLOCKS | on" TriggerValue
+92 TAUEVENT 0 "TAU_THROTTLE | on" TriggerValue
+93 TAUEVENT 0 "TAU_THROTTLE_NUMCALLS | 100000" TriggerValue
+94 TAUEVENT 0 "TAU_THROTTLE_PERCALL | 10" TriggerValue
+95 TAUEVENT 0 "TAU_TRACE | on" TriggerValue
+96 TAUEVENT 0 "TAU_TRACE_FORMAT | tau" TriggerValue
+97 TAUEVENT 0 "TAU_TRACK_CUDA_CDP | off" TriggerValue
+98 TAUEVENT 0 "TAU_TRACK_CUDA_ENV | off" TriggerValue
+99 TAUEVENT 0 "TAU_TRACK_CUDA_INSTRUCTIONS | " TriggerValue
+100 TAUEVENT 0 "TAU_TRACK_CUDA_SASS | off" TriggerValue
+101 TAUEVENT 0 "TAU_TRACK_HEADROOM | off" TriggerValue
+102 TAUEVENT 0 "TAU_TRACK_HEAP | off" TriggerValue
+103 TAUEVENT 0 "TAU_TRACK_IO_PARAMS | off" TriggerValue
+104 TAUEVENT 0 "TAU_TRACK_MEMORY_FOOTPRINT | off" TriggerValue
+105 TAUEVENT 0 "TAU_TRACK_MEMORY_LEAKS | off" TriggerValue
+106 TAUEVENT 0 "TAU_TRACK_MESSAGE | on" TriggerValue
+107 TAUEVENT 0 "TAU_TRACK_SIGNALS | off" TriggerValue
+108 TAUEVENT 0 "TAU_TRACK_UNIFIED_MEMORY | off" TriggerValue
+109 TAUEVENT 0 "TAU_VERBOSE_RANK | -1" TriggerValue
+110 TAUEVENT 0 "Timestamp | 1753524695874849" TriggerValue
+111 TAUEVENT 0 "UTC Time | 2025-07-26T10:11:35Z" TriggerValue
+112 TAUEVENT 0 "pid | 70118" TriggerValue
+113 TAUEVENT 0 "tid | 70118" TriggerValue
+114 TAUEVENT 0 "username | jitubnna" TriggerValue
+60000 TRACER 0 "EV_INIT" none
+60001 TRACER 0 "FLUSH" EntryExit
+60003 TRACER 0 "FLUSH_CLOSE" none
+60004 TRACER 0 "FLUSH_INITM" none
+60005 TRACER 0 "WALL_CLOCK" none
+60006 TRACER 0 "CONT_EVENT" none
+60007 TAU_MESSAGE -7 "MESSAGE_SEND" par
+60008 TAU_MESSAGE -8 "MESSAGE_RECV" par

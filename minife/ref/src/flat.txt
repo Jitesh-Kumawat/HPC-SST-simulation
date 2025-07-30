@@ -1,0 +1,71 @@
+Reading Profile files in profile.0.0.0.*
+
+profile.0.0.0
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0          137          580           1           2     580900 .TAU application
+ 76.3        0.057          443           1           1     443071 taupreload_main
+ 76.3           11          443           1        3046     443014 main 
+ 59.6            2          346           1           3     346385 miniFE::initialize_mpi(int, char**, int&, int&) 
+ 59.2          343          343           1           0     343605 MPI_Init() 
+ 12.3        0.007           71           1           1      71230 miniFE::finalize_mpi() 
+ 12.3           71           71           1           0      71223 MPI_Finalize() 
+  0.6            3            3           1          16       3735 add_params_to_yaml(YAML_Doc&, miniFE::Parameters&) 
+  0.5            2            2           1          12       2859 YAML_Doc::generateYAML[abi:cxx11]() 
+  0.4            1            2          92          92         26 MPI_Allreduce() 
+  0.3            1            1          99           0         18 MPI Collective Sync 
+  0.2            1            1           1           1       1029 miniFE::get_parameters(int, char**, miniFE::Parameters&) 
+  0.2        0.005          0.9           1           2        900 miniFE::broadcast_parameters(miniFE::Parameters&) 
+  0.2        0.464        0.895           2           2        448 MPI_Bcast() 
+  0.1        0.749        0.757           2           2        378 MPI_Reduce() 
+  0.1        0.681        0.685           1           1        685 _GLOBAL__sub_I__ZN6miniFE11is_neighborERK3BoxS2_ 
+  0.1        0.537        0.537        2495           0          0 miniFE::mytimer() 
+  0.1        0.486        0.486         105           0          5 MPI_Wait() 
+  0.1        0.446        0.446         105           0          4 MPI_Send() 
+  0.0        0.033        0.107          23          46          5 YAML_Element::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double) 
+  0.0        0.064        0.064          23           0          3 YAML_Element::convert_double_to_string[abi:cxx11](double) 
+  0.0        0.023        0.061           1           1         61 YAML_Doc::~YAML_Doc() 
+  0.0        0.028        0.048           2           4         24 YAML_Element::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, long long) 
+  0.0        0.036        0.045           6          12          8 YAML_Element::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long) 
+  0.0        0.038        0.038          61          60          1 YAML_Element::~YAML_Element() 
+  0.0        0.033        0.037          24          24          2 YAML_Element::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) 
+  0.0        0.019        0.036           3           3         12 MPI_Allgather() 
+  0.0        0.033        0.033          60          48          1 YAML_Element::printYAML(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) 
+  0.0        0.032        0.032         105           0          0 MPI_Irecv() 
+  0.0        0.013        0.029           5          10          6 YAML_Element::add(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int) 
+  0.0        0.024        0.024          54           0          0 YAML_Element::get(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) 
+  0.0        0.021        0.022           1           1         22 add_timestring_to_yaml(YAML_Doc&) 
+  0.0        0.019        0.019           2           0         10 YAML_Element::convert_long_long_to_string[abi:cxx11](long long) 
+  0.0        0.017        0.017          41           0          0 MPI_Comm_size() 
+  0.0        0.017        0.017          60           0          0 YAML_Element::YAML_Element(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) 
+  0.0        0.015        0.015           5           0          3 YAML_Element::convert_int_to_string[abi:cxx11](int) 
+  0.0        0.004        0.012           1          20         12 add_configuration_to_yaml(YAML_Doc&, int, int) 
+  0.0        0.008        0.008           6           0          1 YAML_Element::convert_size_t_to_string[abi:cxx11](unsigned long) 
+  0.0        0.005        0.005          12           0          0 MPI_Comm_rank() 
+  0.0        0.004        0.004           1           0          4 __static_initialization_and_destruction_0() 
+  0.0        0.003        0.003           1           0          3 YAML_Doc::YAML_Doc(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) 
+  0.0        0.003        0.003           7           6          0 box_partition(int, int, int, Box const&, Box*) 
+  0.0        0.002        0.002           1           0          2 Mantevo::read_args_into_string(int, char**, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) 
+---------------------------------------------------------------------------------------
+
+USER EVENTS: profile.0.0.0
+---------------------------------------------------------------------------------------
+NumSamples   MaxValue   MinValue  MeanValue  Std. Dev.  Event Name
+---------------------------------------------------------------------------------------
+         3         24          4      10.67      9.428  Message size for all-gather
+        92         32          4      8.522       3.02  Message size for all-reduce
+         2         52          4         28         24  Message size for broadcast
+         2          8          8          8          0  Message size for reduce
+       105        440          4      299.8      177.2  Message size received from all nodes
+       105        440          4      299.8      177.2  Message size received in wait
+       105        440          4      299.8      177.2  Message size received in wait : taupreload_main => main => MPI_Wait() 
+       105        440          4      299.8      177.2  Message size sent to all nodes
+        35        440          4      408.8      106.2  Message size sent to node 1
+        35        440          4      408.8      106.2  Message size sent to node 1 : taupreload_main => main => MPI_Send() 
+        35        440          4      408.8      106.2  Message size sent to node 2
+        35        440          4      408.8      106.2  Message size sent to node 2 : taupreload_main => main => MPI_Send() 
+        35         88          4      81.94      20.54  Message size sent to node 3
+        35         88          4      81.94      20.54  Message size sent to node 3 : taupreload_main => main => MPI_Send() 
+---------------------------------------------------------------------------------------

@@ -1,0 +1,55 @@
+Reading Profile files in profile.2.0.0.*
+
+profile.2.0.0
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0          111          515           1           2     515716 .TAU application
+ 78.4        0.028          404           1           1     404307 taupreload_main
+ 78.4            8          404           1        2965     404279 main 
+ 58.7            1          302           1           3     302761 miniFE::initialize_mpi(int, char**, int&, int&) 
+ 58.5          301          301           1           0     301742 MPI_Init() 
+ 14.3         0.01           73           1           1      73781 miniFE::finalize_mpi() 
+ 14.3           73           73           1           0      73771 MPI_Finalize() 
+  1.7            9            9          99           0         91 MPI Collective Sync 
+  1.7        0.945            9          92          92         98 MPI_Allreduce() 
+  1.0            5            5           1           1       5225 YAML_Doc::~YAML_Doc() 
+  0.2            1            1           1           1       1210 miniFE::get_parameters(int, char**, miniFE::Parameters&) 
+  0.2        0.003            1           1           2       1132 miniFE::broadcast_parameters(miniFE::Parameters&) 
+  0.2        0.448            1           2           2        564 MPI_Bcast() 
+  0.2        0.749        0.961           2           2        480 MPI_Reduce() 
+  0.1        0.617        0.617         105           0          6 MPI_Send() 
+  0.1        0.402        0.402        2495           0          0 miniFE::mytimer() 
+  0.1        0.328        0.328         105           0          3 MPI_Wait() 
+  0.0        0.111        0.113           1           1        113 _GLOBAL__sub_I__ZN6miniFE11is_neighborERK3BoxS2_ 
+  0.0        0.019        0.076           3           3         25 MPI_Allgather() 
+  0.0        0.018        0.018         105           0          0 MPI_Irecv() 
+  0.0        0.007        0.007          41           0          0 MPI_Comm_size() 
+  0.0        0.004        0.004           1           0          4 YAML_Element::~YAML_Element() 
+  0.0        0.003        0.003           1           0          3 Mantevo::read_args_into_string(int, char**, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) 
+  0.0        0.003        0.003           7           6          0 box_partition(int, int, int, Box const&, Box*) 
+  0.0        0.002        0.002           1           0          2 YAML_Doc::YAML_Doc(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) 
+  0.0        0.002        0.002           1           0          2 __static_initialization_and_destruction_0() 
+  0.0        0.001        0.001          12           0          0 MPI_Comm_rank() 
+---------------------------------------------------------------------------------------
+
+USER EVENTS: profile.2.0.0
+---------------------------------------------------------------------------------------
+NumSamples   MaxValue   MinValue  MeanValue  Std. Dev.  Event Name
+---------------------------------------------------------------------------------------
+         3         24          4      10.67      9.428  Message size for all-gather
+        92         32          4      8.522       3.02  Message size for all-reduce
+         2         52          4         28         24  Message size for broadcast
+         2          8          8          8          0  Message size for reduce
+       105        528          4      327.1      201.2  Message size received from all nodes
+       105        528          4      327.1      201.2  Message size received in wait
+       105        528          4      327.1      201.2  Message size received in wait : taupreload_main => main => MPI_Wait() 
+       105        528          4      327.1      201.2  Message size sent to all nodes
+        35        440          4      408.8      106.2  Message size sent to node 0
+        35        440          4      408.8      106.2  Message size sent to node 0 : taupreload_main => main => MPI_Send() 
+        35         88          4      81.94      20.54  Message size sent to node 1
+        35         88          4      81.94      20.54  Message size sent to node 1 : taupreload_main => main => MPI_Send() 
+        35        528          4      490.5      127.6  Message size sent to node 3
+        35        528          4      490.5      127.6  Message size sent to node 3 : taupreload_main => main => MPI_Send() 
+---------------------------------------------------------------------------------------
