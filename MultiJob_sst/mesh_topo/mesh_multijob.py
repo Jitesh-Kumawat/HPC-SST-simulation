@@ -7,6 +7,7 @@ from sst.merlin.topology import *
 
 from sst.ember import *
 
+
 PlatformDefinition.setCurrentPlatform("firefly-defaults")
 
 ### Setup the topology ###
