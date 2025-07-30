@@ -1,7 +1,7 @@
 import csv
 import numpy as np
 
-# Mesh dimensions from your SST config: 2 x 2 x 4 (x, y, z)
+
 mesh_shape = (2, 2, 4)
 num_ranks = mesh_shape[0] * mesh_shape[1] * mesh_shape[2]  # 16 ranks
 
@@ -19,7 +19,7 @@ def manhattan_with_latency(rank_a, rank_b):
     dist = abs(a[0] - b[0]) + abs(a[1] - b[1]) + abs(a[2] - b[2])
     return dist + 2
 
-# Neighbor offsets for AllPingPong motifs (MiniMD uses 4 neighbor types)
+# Neighbor offsets for AllPingPong motifs 
 neighbor_offsets = [
     (1, 0, 0),  # Neighbor pattern 1: x+1 direction
     (0, 1, 0),  # Neighbor pattern 2: y+1 direction
@@ -54,7 +54,7 @@ def average_pairwise_hops(size):
 def barrier_hops(size):
     return 2 * (np.log2(size) + 1)
 
-# === Compute AllPingPong neighbor info ===
+#Compute AllPingPong neighbor info
 allpingpong_averages = []
 allpingpong_individual_pairs = []
 per_rank_neighbors = {rank: [] for rank in range(num_ranks)}
@@ -130,6 +130,5 @@ print("MiniMD 3D Mesh Hop Count Summary:")
 for row in summary_rows:
     print(f"{row[0]:<50} Ranks: {row[1]:<3} Pairs: {row[2]:<5} Avg Hops: {row[3]}")
 
-print("\nPer-rank neighbor info written to 'minimd_3dmesh_per_rank_neighbors.csv'")
-print("Detailed pattern summary written to 'minimd_3dmesh_hopcount_summary.csv'")
+
 

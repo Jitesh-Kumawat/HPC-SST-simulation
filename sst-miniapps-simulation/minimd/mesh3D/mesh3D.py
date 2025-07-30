@@ -9,9 +9,9 @@ PlatformDefinition.setCurrentPlatform("firefly-defaults")
 
 # Topology: 3D Mesh (2x2x4) with 1 host per router (total 16 nodes)
 topo = topoMesh()
-topo.shape = "2x2x4"              # 3D mesh
-topo.local_ports = 1             # 1 compute node per router
-topo.width = "1x1x1"             # Single link width
+topo.shape = "2x2x4"              
+topo.local_ports = 1            
+topo.width = "1x1x1"           
 topo.link_latency = "20ns"
 
 # Router configuration
@@ -37,8 +37,7 @@ nic.output_buf_size = "16kB"
 system = System()
 system.setTopology(topo)
 
-# === Job Patterns Based on MiniMD TAU Profiling ===
-# 16 ranks, 2x2x4 mesh, use multiple AllPingPongMotif instances
+# Job Patterns Based on MiniMD TAU Profiling
 job = {
     "size": 16,
     "start": 0,
@@ -47,12 +46,12 @@ job = {
         {"pattern": "AllPingPong", "params": "iterations=325 messageSize=9000 computetime=476000"},   # Neighbor 2 (e.g., y+1)
         {"pattern": "AllPingPong", "params": "iterations=325 messageSize=20510 computetime=476000"},  # Neighbor 3 (e.g., z+1)
         {"pattern": "AllPingPong", "params": "iterations=325 messageSize=9000 computetime=476000"},   # Neighbor 4 (e.g., diagonal)
-        {"pattern": "Allreduce", "params": "count=1 iterations=40 compute=2451000"},  # Scaled to 2,451 µs
-        {"pattern": "Barrier", "params": "iterations=15 compute=1392000"},           # Scaled to 1,392 µs
+        {"pattern": "Allreduce", "params": "count=1 iterations=40 compute=2451000"}, 
+        {"pattern": "Barrier", "params": "iterations=15 compute=1392000"},         
     ]
 }
 
-# Assign jobs to system with explicit link setup
+# Assign jobs to system 
 ep = EmberMPIJob(job["start"], job["size"])
 ep.network_interface = nic
 ep.addMotif("Init")
@@ -66,7 +65,7 @@ system.allocateNodes(ep, "linear")
 system.build()
 
 # Configure statistics and debugging
-sst.setStatisticLoadLevel(12)  # Detailed logging
+sst.setStatisticLoadLevel(12) 
 sst.setStatisticOutput("sst.statOutputCSV", {
     "filepath": "minimd_mesh_stats.csv",
     "separator": ", "
