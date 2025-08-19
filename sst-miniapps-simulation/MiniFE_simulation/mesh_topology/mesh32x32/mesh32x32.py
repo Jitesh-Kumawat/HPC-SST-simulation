@@ -8,9 +8,9 @@ from sst.ember import *
 # Set the platform
 PlatformDefinition.setCurrentPlatform("firefly-defaults")
 
-# Configure 2x2 Mesh topology for 4 nodes 
+# Configure 32x32 Mesh topology for 1024 nodes 
 topo = topoMesh()
-topo.shape = "2x2"          
+topo.shape = "32x32"          
 topo.local_ports = 1         
 topo.width = "4x4"          
 topo.link_latency = "25ns" 
@@ -40,7 +40,7 @@ system.setTopology(topo)
 
 
 job = {
-    "size": 4,  # 4 ranks (NODE 0-3)
+    "size": 1024, 
     "start": 0,
     "motifs": [
         {"pattern": "Allreduce", "params": "iterations=92 count=1 compute=69ns"},  # 8 bytes, 69 ns/call
@@ -59,11 +59,6 @@ job = {
     ]
 }
 
-# Verify total ranks
-total_ranks = job["size"]
-if total_ranks != 4:
-    print(f"Error: Total ranks ({total_ranks}) does not equal 4! Exiting.")
-    exit(1)
 
 # Create and assign job
 ep = EmberMPIJob(0, job["size"])
@@ -81,7 +76,7 @@ system.build()
 # Statistics configuration
 sst.setStatisticLoadLevel(10)  
 sst.setStatisticOutput("sst.statOutputCSV", {
-    "filepath": "miniFE_communication_stats.csv",
+    "filepath": "mesh32x32_stats.csv",
     "separator": ", "
 })
 
@@ -93,11 +88,3 @@ sst.enableAllStatisticsForComponentType("ember.EmberEngine", {
 })
 sst.enableAllStatisticsForComponentType("ember.nic")
 
-# Print simulation configuration
-print("Simulation Configuration:")
-print(f"- Topology: 2x2 Mesh")
-print(f"- Total routers: {2*2} = 4")
-print(f"- Total compute nodes: {4}")
-print(f"- Job configured: 1 job with size: {job['size']} ranks")
-print(f"- Total ranks: {total_ranks}")
-print(f"- Motifs: {', '.join(motif['pattern'] for motif in job['motifs'])}")
